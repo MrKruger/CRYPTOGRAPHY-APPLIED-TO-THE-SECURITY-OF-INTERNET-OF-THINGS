@@ -11,13 +11,29 @@ import os
 
 def Banner():
     print(""" 
- XXXXX                            XXX   XXXXXXX XXXXXXX
-X     X  XXXXX      X    XXXXX     X    X     X    X   
-X        X    X     X    X    X    X    X     X    X   
-X        X    X     X    X    X    X    X     X    X   
-X        XXXX       X    XXXX      X    X     X    X   
-X     X  X   X      X    X         X    X     X    X   
- XXXXX   X    X     X    X        XXX   XXXXXXX    X    \n""")
+        CCCCCCCCCCCCC                     iiii                     IIIIIIIIII     OOOOOOOOO     TTTTTTTTTTTTTTTTTTTTTTT
+     CCC::::::::::::C                    i::::i                    I::::::::I   OO:::::::::OO   T:::::::::::::::::::::T
+   CC:::::::::::::::C                     iiii                     I::::::::I OO:::::::::::::OO T:::::::::::::::::::::T
+  C:::::CCCCCCCC::::C                                              II::::::IIO:::::::OOO:::::::OT:::::TT:::::::TT:::::T
+ C:::::C       CCCCCCrrrrr   rrrrrrrrr  iiiiiiippppp   ppppppppp     I::::I  O::::::O   O::::::OTTTTTT  T:::::T  TTTTTT
+C:::::C              r::::rrr:::::::::r i:::::ip::::ppp:::::::::p    I::::I  O:::::O     O:::::O        T:::::T        
+C:::::C              r:::::::::::::::::r i::::ip:::::::::::::::::p   I::::I  O:::::O     O:::::O        T:::::T        
+C:::::C              rr::::::rrrrr::::::ri::::ipp::::::ppppp::::::p  I::::I  O:::::O     O:::::O        T:::::T        
+C:::::C               r:::::r     r:::::ri::::i p:::::p     p:::::p  I::::I  O:::::O     O:::::O        T:::::T        
+C:::::C               r:::::r     rrrrrrri::::i p:::::p     p:::::p  I::::I  O:::::O     O:::::O        T:::::T        
+C:::::C               r:::::r            i::::i p:::::p     p:::::p  I::::I  O:::::O     O:::::O        T:::::T        
+ C:::::C       CCCCCC r:::::r            i::::i p:::::p    p::::::p  I::::I  O::::::O   O::::::O        T:::::T        
+  C:::::CCCCCCCC::::C r:::::r           i::::::ip:::::ppppp:::::::pII::::::IIO:::::::OOO:::::::O      TT:::::::TT      
+   CC:::::::::::::::C r:::::r           i::::::ip::::::::::::::::p I::::::::I OO:::::::::::::OO       T:::::::::T      
+     CCC::::::::::::C r:::::r           i::::::ip::::::::::::::pp  I::::::::I   OO:::::::::OO         T:::::::::T      
+        CCCCCCCCCCCCC rrrrrrr           iiiiiiiip::::::pppppppp    IIIIIIIIII     OOOOOOOOO           TTTTTTTTTTT      
+                                                p:::::p                                                                
+                                                p:::::p                                                                
+                                               p:::::::p                                                               
+                                               p:::::::p                                                               
+                                               p:::::::p                                                               
+                                               ppppppppp                                                                                                                    
+   \n""")
 
     print("""
 +-------------------------+
@@ -834,14 +850,21 @@ try:
 
     elif option == 4:
         print("""
-X     X                 X    X                                         
-XX   XX  XXXXX          X   X    XXXXX   X    X   XXXX   XXXXXX  XXXXX 
-X X X X  X    X         X  X     X    X  X    X  X    X  X       X    X
-X  X  X  X    X         XXX      X    X  X    X  X       XXXXX   X    X
-X     X  XXXX     XXX   X  X     XXXX    X    X  X  XXX  X       XXXX 
-X     X  X   X    XXX   X   X    X   X   X    X  X    X  X       X   X 
-X     X  X    X   XXX   X    X   X    X   XXXX    XXXX   XXXXXX  X    X
- 
+ .S_SsS_S.    .S_sSSs           .S    S.    .S_sSSs     .S       S.     sSSSSs    sSSs   .S_sSSs    
+.SS~S*S~SS.  .SS~YS%%b         .SS    SS.  .SS~YS%%b   .SS       SS.   d%%%%SP   d%%SP  .SS~YS%%b   
+S%S `Y' S%S  S%S   `S%b        S%S    S&S  S%S   `S%b  S%S       S%S  d%S'      d%S'    S%S   `S%b  
+S%S     S%S  S%S    S%S        S%S    d*S  S%S    S%S  S%S       S%S  S%S       S%S     S%S    S%S  
+S%S     S%S  S%S    d*S        S&S   .S*S  S%S    d*S  S&S       S&S  S&S       S&S     S%S    d*S  
+S&S     S&S  S&S   .S*S        S&S_sdSSS   S&S   .S*S  S&S       S&S  S&S       S&S_Ss  S&S   .S*S  
+S&S     S&S  S&S_sdSSS         S&S~YSSY%b  S&S_sdSSS   S&S       S&S  S&S       S&S~SP  S&S_sdSSS   
+S&S     S&S  S&S~YSY%b         S&S    `S%  S&S~YSY%b   S&S       S&S  S&S sSSs  S&S     S&S~YSY%b   
+S*S     S*S  S*S   `S%b        S*S     S%  S*S   `S%b  S*b       d*S  S*b `S%%  S*b     S*S   `S%b  
+S*S     S*S  S*S    S%S        S*S     S&  S*S    S%S  S*S.     .S*S  S*S   S%  S*S.    S*S    S%S  
+S*S     S*S  S*S    S&S        S*S     S&  S*S    S&S   SSSbs_sdSSS    SS_sSSS   SSSbs  S*S    S&S  
+SSS     S*S  S*S    SSS   SS   S*S     SS  S*S    SSS    YSSP~YSSY      Y~YSSY    YSSP  S*S    SSS  
+        SP   SP          S%%S  SP          SP                                           SP          
+        Y    Y            SS   Y           Y                                            Y           
+                                                                                                    
                                                          by: @Mr.Kr¥g€₹
 """)
 
