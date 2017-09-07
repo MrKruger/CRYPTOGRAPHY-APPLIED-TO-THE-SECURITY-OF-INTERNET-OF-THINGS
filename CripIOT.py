@@ -1,8 +1,8 @@
 """
     TITLE: CRIPTOGRAFIA SIMÉTRICA CLÁSSICA PARA APLICAÇÃO EM PLATAFORMAS IOT
     AUTHOR: GABRIEL KRÜGER
-    DATA: 04/09/17
-    VERSÃO: 1.2
+    DATE: 07/09/17
+    v1.3
 """
 
 import numpy as np                                                                                                      #IMPORTA A BIBLIOTECA PARA MANIPULAÇÃO DE MATRIZES NUMPY
@@ -10,29 +10,29 @@ import math                                                                     
 import os
 
 def Banner():
-    print(""" 
+    print("""
         CCCCCCCCCCCCC                     iiii                     IIIIIIIIII     OOOOOOOOO     TTTTTTTTTTTTTTTTTTTTTTT
      CCC::::::::::::C                    i::::i                    I::::::::I   OO:::::::::OO   T:::::::::::::::::::::T
    CC:::::::::::::::C                     iiii                     I::::::::I OO:::::::::::::OO T:::::::::::::::::::::T
   C:::::CCCCCCCC::::C                                              II::::::IIO:::::::OOO:::::::OT:::::TT:::::::TT:::::T
  C:::::C       CCCCCCrrrrr   rrrrrrrrr  iiiiiiippppp   ppppppppp     I::::I  O::::::O   O::::::OTTTTTT  T:::::T  TTTTTT
-C:::::C              r::::rrr:::::::::r i:::::ip::::ppp:::::::::p    I::::I  O:::::O     O:::::O        T:::::T        
-C:::::C              r:::::::::::::::::r i::::ip:::::::::::::::::p   I::::I  O:::::O     O:::::O        T:::::T        
-C:::::C              rr::::::rrrrr::::::ri::::ipp::::::ppppp::::::p  I::::I  O:::::O     O:::::O        T:::::T        
-C:::::C               r:::::r     r:::::ri::::i p:::::p     p:::::p  I::::I  O:::::O     O:::::O        T:::::T        
-C:::::C               r:::::r     rrrrrrri::::i p:::::p     p:::::p  I::::I  O:::::O     O:::::O        T:::::T        
-C:::::C               r:::::r            i::::i p:::::p     p:::::p  I::::I  O:::::O     O:::::O        T:::::T        
- C:::::C       CCCCCC r:::::r            i::::i p:::::p    p::::::p  I::::I  O::::::O   O::::::O        T:::::T        
-  C:::::CCCCCCCC::::C r:::::r           i::::::ip:::::ppppp:::::::pII::::::IIO:::::::OOO:::::::O      TT:::::::TT      
-   CC:::::::::::::::C r:::::r           i::::::ip::::::::::::::::p I::::::::I OO:::::::::::::OO       T:::::::::T      
-     CCC::::::::::::C r:::::r           i::::::ip::::::::::::::pp  I::::::::I   OO:::::::::OO         T:::::::::T      
-        CCCCCCCCCCCCC rrrrrrr           iiiiiiiip::::::pppppppp    IIIIIIIIII     OOOOOOOOO           TTTTTTTTTTT      
-                                                p:::::p                                                                
-                                                p:::::p                                                                
-                                               p:::::::p                                                               
-                                               p:::::::p                                                               
-                                               p:::::::p                                                               
-                                               ppppppppp                                                                                                                    
+C:::::C              r::::rrr:::::::::r i:::::ip::::ppp:::::::::p    I::::I  O:::::O     O:::::O        T:::::T
+C:::::C              r:::::::::::::::::r i::::ip:::::::::::::::::p   I::::I  O:::::O     O:::::O        T:::::T
+C:::::C              rr::::::rrrrr::::::ri::::ipp::::::ppppp::::::p  I::::I  O:::::O     O:::::O        T:::::T
+C:::::C               r:::::r     r:::::ri::::i p:::::p     p:::::p  I::::I  O:::::O     O:::::O        T:::::T
+C:::::C               r:::::r     rrrrrrri::::i p:::::p     p:::::p  I::::I  O:::::O     O:::::O        T:::::T
+C:::::C               r:::::r            i::::i p:::::p     p:::::p  I::::I  O:::::O     O:::::O        T:::::T
+ C:::::C       CCCCCC r:::::r            i::::i p:::::p    p::::::p  I::::I  O::::::O   O::::::O        T:::::T
+  C:::::CCCCCCCC::::C r:::::r           i::::::ip:::::ppppp:::::::pII::::::IIO:::::::OOO:::::::O      TT:::::::TT
+   CC:::::::::::::::C r:::::r           i::::::ip::::::::::::::::p I::::::::I OO:::::::::::::OO       T:::::::::T
+     CCC::::::::::::C r:::::r           i::::::ip::::::::::::::pp  I::::::::I   OO:::::::::OO         T:::::::::T
+        CCCCCCCCCCCCC rrrrrrr           iiiiiiiip::::::pppppppp    IIIIIIIIII     OOOOOOOOO           TTTTTTTTTTT
+                                                p:::::p
+                                                p:::::p
+                                               p:::::::p
+                                               p:::::::p
+                                               p:::::::p
+                                               ppppppppp
    \n""")
 
     print("""
@@ -41,7 +41,7 @@ C:::::C               r:::::r            i::::i p:::::p     p:::::p  I::::I  O::
 +-------------------------+
 
 +-------------------------+
-| [1] Encriptar           | 
+| [1] Encriptar           |
 | [2] Decriptar           |
 | [3] Ajuda               |
 | [4] Créditos            |
@@ -116,7 +116,7 @@ try:
                 return Mensagem_Cifrada
 
         Rodadas = 0                                                                                                             #ATRIBUI A VARIÁVEL O NÚMERO DE RODADAS DE REPETIÇÃO PARA O PROGRAMA
-        Numero_de_Repetições = 51                                                                                               #ATRIBUI A VARIÁVEL O NÚMERO DE REPETIÇÕES PARA CONTAGEM DO TEMPO DE EXECUÇÃO DO PROGRAMA
+        Numero_de_Repetições = 25                                                                                               #ATRIBUI A VARIÁVEL O NÚMERO DE REPETIÇÕES PARA CONTAGEM DO TEMPO DE EXECUÇÃO DO PROGRAMA
 
         Texto_Claro = input("[+] Digite um texto para ser Criptografado: ")                                                     #ATRIBUI A VARIÁVEL O TEXTO CLARO DIGITADO PELO USUÁRIO
 
@@ -363,12 +363,6 @@ try:
 
             Lista_Matriz_Transposta = Matriz_Transposta.flatten().tolist()                                                      #TRANSFORMA A MATRIZ TRANSPOSTA EM UMA LISTA E ATRIBUI A RESPECTIVA VARIÁVEL
 
-            Lista_Matriz_Transposta_Nova = []                                                                                   #INICIA UMA VARIÁVEL COM UMA LISTA VAZIZ
-
-            for Item in Lista_Matriz_Transposta:                                                                                #LOOP PARA RETIRAR OS ZEROS QUE FORAM COMPLETADOS NA MATRIZ
-                if Item not in ('0'):
-                    Lista_Matriz_Transposta_Nova.append(Item)
-
             def Aplica_Mul_Chaves(Resultado_Lista_Cripto):
                 for i in range(25):
                     L_1 = Cifra_de_Cesar().Encriptar(Resultado_Lista_Cripto, Chave=lista_chaves_1[i])
@@ -426,8 +420,8 @@ try:
                     Lista_Cifrada_2 = L_52
                 return Lista_Cifrada_2
 
-            Resultado_Aplica_Mul_Chaves = Aplica_Mul_Chaves(Lista_Matriz_Transposta_Nova)
-    
+            Resultado_Aplica_Mul_Chaves = Aplica_Mul_Chaves(Lista_Matriz_Transposta)
+
             Rodadas = Rodadas + 1                                                                                               #ROTINA DE REPETIÇÕES
             Texto_Claro = Resultado_Aplica_Mul_Chaves
             if Rodadas >= Numero_de_Repetições:
@@ -495,7 +489,7 @@ try:
                 return Mensagem_Cifrada
 
         Rodadas = 0                                                                                                             #ATRIBUI A VARIÁVEL O NÚMERO DE RODADAS DE REPETIÇÃO PARA O PROGRAMA
-        Numero_de_Repetições = 51                                                                                               #ATRIBUI A VARIÁVEL O NÚMERO DE REPETIÇÕES PARA CONTAGEM DO TEMPO DE EXECUÇÃO DO PROGRAMA
+        Numero_de_Repetições = 25                                                                                               #ATRIBUI A VARIÁVEL O NÚMERO DE REPETIÇÕES PARA CONTAGEM DO TEMPO DE EXECUÇÃO DO PROGRAMA
 
         Texto_Claro = input("[+] Digite um texto para ser Decriptografado: ")                                                   #ATRIBUI A VARIÁVEL O TEXTO CLARO DIGITADO PELO USUÁRIO
 
@@ -742,12 +736,6 @@ try:
 
             Lista_Matriz_Transposta = Matriz_Transposta.flatten().tolist()                                                      #TRANSFORMA A MATRIZ TRANSPOSTA EM UMA LISTA E ATRIBUI A RESPECTIVA VARIÁVEL
 
-            Lista_Matriz_Transposta_Nova = []                                                                                   #INICIA UMA VARIÁVEL COM UMA LISTA VAZIZ
-
-            for Item in Lista_Matriz_Transposta:                                                                                #LOOP PARA RETIRAR OS ZEROS QUE FORAM COMPLETADOS NA MATRIZ
-                if Item not in ('0'):
-                    Lista_Matriz_Transposta_Nova.append(Item)
-
             def Aplica_Mul_Chaves(Resultado_Lista_Cripto):
                 for i in range(25):
                     L_1 = Cifra_de_Cesar().Decriptar(Resultado_Lista_Cripto, Chave=lista_chaves_1[i])
@@ -805,12 +793,12 @@ try:
                     Lista_Cifrada_2 = L_52
                 return Lista_Cifrada_2
 
-            Resultado_Aplica_Mul_Chaves = Aplica_Mul_Chaves(Lista_Matriz_Transposta_Nova)
-    
+            Resultado_Aplica_Mul_Chaves = Aplica_Mul_Chaves(Lista_Matriz_Transposta)
+
             Rodadas = Rodadas + 1                                                                                               #ROTINA DE REPETIÇÕES
             Texto_Claro = Resultado_Aplica_Mul_Chaves
             if Rodadas >= Numero_de_Repetições:
-                print("[=] O resultado do texto Decriptografado é: ", Texto_Claro)
+                print("[=] O resultado do texto Decriptografado é: ", Texto_Claro.strip("0"))
                 break
 
     elif option == 3:
@@ -818,7 +806,7 @@ try:
 +***************************************************************************+
 |                                   HELP                                    |
 +***************************************************************************+
-          
+
 |=> PARA ENCRIPTAR UM TEXTO, SELECIONE A OPÇÃO 1:
     => EXEMPLO: >>> 1
                 [+] Digite um texto para ser Criptografado: xxxxxxxxxxx
@@ -836,7 +824,7 @@ try:
                 [=] O resultado do texto Decriptografado é: xxxxxxxxxxx
 
     => OBSERVAÇÕES:
-        => O TEXTO INSERIDO PARA DECRIPTAÇÃO DEVE OBRIGATÓRIAMENTE TER 
+        => O TEXTO INSERIDO PARA DECRIPTAÇÃO DEVE OBRIGATÓRIAMENTE TER
            SIDO ENCRIPTADO ANTES COM O MESMO ALGORÍTMO.
 
 |=> PARA PEDIR AJUDA SELECIONE A OPÇÃO 3.
@@ -850,22 +838,22 @@ try:
 
     elif option == 4:
         print("""
- .S_SsS_S.    .S_sSSs           .S    S.    .S_sSSs     .S       S.     sSSSSs    sSSs   .S_sSSs    
-.SS~S*S~SS.  .SS~YS%%b         .SS    SS.  .SS~YS%%b   .SS       SS.   d%%%%SP   d%%SP  .SS~YS%%b   
-S%S `Y' S%S  S%S   `S%b        S%S    S&S  S%S   `S%b  S%S       S%S  d%S'      d%S'    S%S   `S%b  
-S%S     S%S  S%S    S%S        S%S    d*S  S%S    S%S  S%S       S%S  S%S       S%S     S%S    S%S  
-S%S     S%S  S%S    d*S        S&S   .S*S  S%S    d*S  S&S       S&S  S&S       S&S     S%S    d*S  
-S&S     S&S  S&S   .S*S        S&S_sdSSS   S&S   .S*S  S&S       S&S  S&S       S&S_Ss  S&S   .S*S  
-S&S     S&S  S&S_sdSSS         S&S~YSSY%b  S&S_sdSSS   S&S       S&S  S&S       S&S~SP  S&S_sdSSS   
-S&S     S&S  S&S~YSY%b         S&S    `S%  S&S~YSY%b   S&S       S&S  S&S sSSs  S&S     S&S~YSY%b   
-S*S     S*S  S*S   `S%b        S*S     S%  S*S   `S%b  S*b       d*S  S*b `S%%  S*b     S*S   `S%b  
-S*S     S*S  S*S    S%S        S*S     S&  S*S    S%S  S*S.     .S*S  S*S   S%  S*S.    S*S    S%S  
-S*S     S*S  S*S    S&S        S*S     S&  S*S    S&S   SSSbs_sdSSS    SS_sSSS   SSSbs  S*S    S&S  
-SSS     S*S  S*S    SSS   SS   S*S     SS  S*S    SSS    YSSP~YSSY      Y~YSSY    YSSP  S*S    SSS  
-        SP   SP          S%%S  SP          SP                                           SP          
-        Y    Y            SS   Y           Y                                            Y           
-                                                                                                    
-                                                         by: @Mr.Kr¥g€₹
+ .S_SsS_S.    .S_sSSs           .S    S.    .S_sSSs     .S       S.     sSSSSs    sSSs   .S_sSSs
+.SS~S*S~SS.  .SS~YS%%b         .SS    SS.  .SS~YS%%b   .SS       SS.   d%%%%SP   d%%SP  .SS~YS%%b
+S%S `Y' S%S  S%S   `S%b        S%S    S&S  S%S   `S%b  S%S       S%S  d%S'      d%S'    S%S   `S%b
+S%S     S%S  S%S    S%S        S%S    d*S  S%S    S%S  S%S       S%S  S%S       S%S     S%S    S%S
+S%S     S%S  S%S    d*S        S&S   .S*S  S%S    d*S  S&S       S&S  S&S       S&S     S%S    d*S
+S&S     S&S  S&S   .S*S        S&S_sdSSS   S&S   .S*S  S&S       S&S  S&S       S&S_Ss  S&S   .S*S
+S&S     S&S  S&S_sdSSS         S&S~YSSY%b  S&S_sdSSS   S&S       S&S  S&S       S&S~SP  S&S_sdSSS
+S&S     S&S  S&S~YSY%b         S&S    `S%  S&S~YSY%b   S&S       S&S  S&S sSSs  S&S     S&S~YSY%b
+S*S     S*S  S*S   `S%b        S*S     S%  S*S   `S%b  S*b       d*S  S*b `S%%  S*b     S*S   `S%b
+S*S     S*S  S*S    S%S        S*S     S&  S*S    S%S  S*S.     .S*S  S*S   S%  S*S.    S*S    S%S
+S*S     S*S  S*S    S&S        S*S     S&  S*S    S&S   SSSbs_sdSSS    SS_sSSS   SSSbs  S*S    S&S
+SSS     S*S  S*S    SSS   SS   S*S     SS  S*S    SSS    YSSP~YSSY      Y~YSSY    YSSP  S*S    SSS
+        SP   SP          S%%S  SP          SP                                           SP
+        Y    Y            SS   Y           Y                                            Y
+
+                                                                                    by: @Mr.Kr¥g€₹
 """)
 
 except KeyboardInterrupt:
