@@ -5,8 +5,8 @@
     v1.3
 """
 
-import numpy as np                                                                                                      #IMPORTA A BIBLIOTECA PARA MANIPULAÇÃO DE MATRIZES NUMPY
-import math                                                                                                             #IMPORTA A BIBLIOTECA PARA MANIPULAÇÃO DE OPERAÇÕES MATEMÁTICAS MATH
+import numpy as np                                                                                                     
+import math                                                                                                             
 import os
 
 def Banner():
@@ -115,10 +115,10 @@ try:
                         Mensagem_Cifrada += Letra
                 return Mensagem_Cifrada
 
-        Rodadas = 0                                                                                                             #ATRIBUI A VARIÁVEL O NÚMERO DE RODADAS DE REPETIÇÃO PARA O PROGRAMA
-        Numero_de_Repetições = 25                                                                                               #ATRIBUI A VARIÁVEL O NÚMERO DE REPETIÇÕES PARA CONTAGEM DO TEMPO DE EXECUÇÃO DO PROGRAMA
+        Rodadas = 0                                                                                                             
+        Numero_de_Repetições = 25                                                                                              
 
-        Texto_Claro = input("[+] Digite um texto para ser Criptografado: ")                                                     #ATRIBUI A VARIÁVEL O TEXTO CLARO DIGITADO PELO USUÁRIO
+        Texto_Claro = input("[+] Digite um texto para ser Criptografado: ")                                                    
 
         lista_chaves_1 =  [5,17,25,10,18,24,6,4,9,19,20,14,22,15,7,23,3,16,1,12,2,8,21,13,11]
         lista_chaves_2 =  [2,3,15,11,25,6,21,4,19,20,18,17,13,10,12,24,1,5,16,7,9,8,22,23,14]
@@ -178,14 +178,14 @@ try:
 
         while True:
 
-            def Lista_Inicial_Letras(Texto_Claro_Inicial):                                                                      #DEFINE UMA FUNÇÃO QUE TRANSFORMA O TEXTO CLARO EM LISTA
+            def Lista_Inicial_Letras(Texto_Claro_Inicial):                                                                      
                 Lista = []
                 Repete = len(Texto_Claro_Inicial)
                 for Letras in range(Repete):
                     Lista.append(Texto_Claro_Inicial[Letras])
                 return Lista
 
-            Resultado_Lista_Inicial_Letras = Lista_Inicial_Letras(Texto_Claro)                                                  #ATRIBUI O RESULTADO DA FUNÇÃO ANTERIOR A RESPECTIVA VARIÁVEL
+            Resultado_Lista_Inicial_Letras = Lista_Inicial_Letras(Texto_Claro)                                                  
 
             def Define_Tamanho_Matriz(M):
                 Mensagem = M
@@ -357,11 +357,11 @@ try:
 
                 return Matriz
 
-            Matriz = Define_Tamanho_Matriz(Resultado_Lista_Inicial_Letras)                                                      #TRANSFORMA O RESULTADO DA FUNÇÃO ANTERIOR (LISTA) EM UMA MATRIZ QUADRADA
+            Matriz = Define_Tamanho_Matriz(Resultado_Lista_Inicial_Letras)                                                      
 
-            Matriz_Transposta = Matriz.transpose()                                                                              #OBTÉM A TRANSPOSTA DA MATRIZ ANTERIOR(MÉTODO DE CERCO DE TRILHO)
+            Matriz_Transposta = Matriz.transpose()                                                                              
 
-            Lista_Matriz_Transposta = Matriz_Transposta.flatten().tolist()                                                      #TRANSFORMA A MATRIZ TRANSPOSTA EM UMA LISTA E ATRIBUI A RESPECTIVA VARIÁVEL
+            Lista_Matriz_Transposta = Matriz_Transposta.flatten().tolist()                                                     
 
             def Aplica_Mul_Chaves(Resultado_Lista_Cripto):
                 for i in range(25):
@@ -422,7 +422,7 @@ try:
 
             Resultado_Aplica_Mul_Chaves = Aplica_Mul_Chaves(Lista_Matriz_Transposta)
 
-            Rodadas = Rodadas + 1                                                                                               #ROTINA DE REPETIÇÕES
+            Rodadas = Rodadas + 1                                                                                               
             Texto_Claro = Resultado_Aplica_Mul_Chaves
             if Rodadas >= Numero_de_Repetições:
                 print("[=] O resultado do texto Criptografado é: ", Texto_Claro)
@@ -488,10 +488,10 @@ try:
                         Mensagem_Cifrada += Letra
                 return Mensagem_Cifrada
 
-        Rodadas = 0                                                                                                             #ATRIBUI A VARIÁVEL O NÚMERO DE RODADAS DE REPETIÇÃO PARA O PROGRAMA
-        Numero_de_Repetições = 25                                                                                               #ATRIBUI A VARIÁVEL O NÚMERO DE REPETIÇÕES PARA CONTAGEM DO TEMPO DE EXECUÇÃO DO PROGRAMA
+        Rodadas = 0                                                                                                             
+        Numero_de_Repetições = 25                                                                                               
 
-        Texto_Claro = input("[+] Digite um texto para ser Decriptografado: ")                                                   #ATRIBUI A VARIÁVEL O TEXTO CLARO DIGITADO PELO USUÁRIO
+        Texto_Claro = input("[+] Digite um texto para ser Decriptografado: ")                                                   
 
         lista_chaves_1 =  [5,17,25,10,18,24,6,4,9,19,20,14,22,15,7,23,3,16,1,12,2,8,21,13,11]
         lista_chaves_2 =  [2,3,15,11,25,6,21,4,19,20,18,17,13,10,12,24,1,5,16,7,9,8,22,23,14]
@@ -551,14 +551,14 @@ try:
 
         while True:
 
-            def Lista_Inicial_Letras(Texto_Claro_Inicial):                                                                      #DEFINE UMA FUNÇÃO QUE TRANSFORMA O TEXTO CLARO EM LISTA
+            def Lista_Inicial_Letras(Texto_Claro_Inicial):                                                                      
                 Lista = []
                 Repete = len(Texto_Claro_Inicial)
                 for Letras in range(Repete):
                     Lista.append(Texto_Claro_Inicial[Letras])
                 return Lista
 
-            Resultado_Lista_Inicial_Letras = Lista_Inicial_Letras(Texto_Claro)                                                  #ATRIBUI O RESULTADO DA FUNÇÃO ANTERIOR A RESPECTIVA VARIÁVEL
+            Resultado_Lista_Inicial_Letras = Lista_Inicial_Letras(Texto_Claro)                                                  
 
             def Define_Tamanho_Matriz(M):
                 Mensagem = M
@@ -730,11 +730,11 @@ try:
 
                 return Matriz
 
-            Matriz = Define_Tamanho_Matriz(Resultado_Lista_Inicial_Letras)                                                      #TRANSFORMA O RESULTADO DA FUNÇÃO ANTERIOR (LISTA) EM UMA MATRIZ QUADRADA
+            Matriz = Define_Tamanho_Matriz(Resultado_Lista_Inicial_Letras)                                                      
 
-            Matriz_Transposta = Matriz.transpose()                                                                              #OBTÉM A TRANSPOSTA DA MATRIZ ANTERIOR(MÉTODO DE CERCO DE TRILHO)
+            Matriz_Transposta = Matriz.transpose()                                                                              
 
-            Lista_Matriz_Transposta = Matriz_Transposta.flatten().tolist()                                                      #TRANSFORMA A MATRIZ TRANSPOSTA EM UMA LISTA E ATRIBUI A RESPECTIVA VARIÁVEL
+            Lista_Matriz_Transposta = Matriz_Transposta.flatten().tolist()                                                      
 
             def Aplica_Mul_Chaves(Resultado_Lista_Cripto):
                 for i in range(25):
@@ -795,7 +795,7 @@ try:
 
             Resultado_Aplica_Mul_Chaves = Aplica_Mul_Chaves(Lista_Matriz_Transposta)
 
-            Rodadas = Rodadas + 1                                                                                               #ROTINA DE REPETIÇÕES
+            Rodadas = Rodadas + 1                                                                                             
             Texto_Claro = Resultado_Aplica_Mul_Chaves
             if Rodadas >= Numero_de_Repetições:
                 print("[=] O resultado do texto Decriptografado é: ", Texto_Claro.strip("0"))
