@@ -18,6 +18,6 @@ git clone https://github.com/MrKruger/CRYPTOGRAPHY-APPLIED-TO-THE-SECURITY-OF-IN
 python CripIOT.py
 ```
 
-O CÓDIGO SERÁ EXECUTADO/THE CODE WILL BE RUN.
+O código será executado/The code will be run.
 
-É ISSO, BOA DIVERSÃO/THAT'S IT, GOOD FUN!                                           
+É isso, boa diversão/That's it, good fun!                                           
