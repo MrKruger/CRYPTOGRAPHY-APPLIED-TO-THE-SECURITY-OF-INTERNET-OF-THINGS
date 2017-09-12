@@ -4,15 +4,15 @@ CripIOT é uma ferramenta de criptografia para aplicação em plataformas de int
 
 ## Instalação/Installation
 
-* **BAIXAR O PROGRAMA/DOWNLOAD THE PROGRAM**: PARA BAIXAR O CÓDIGO, APERTE O BOTÃO DE DOWNLOAD OU CLONE VIA TERMINAL OU CMD/TO DOWNLOAD THE CODE, PRESS THE DOWNLOAD BUTTON OR CLONE  VIA TERMINAL OR CMD:
+* **BAIXAR O PROGRAMA/DOWNLOAD THE PROGRAM**: Para baixar o código, aperte o botão de download ou clone via terminal ou cmd/To download the code, press the download button or clone  via terminal or cmd:
 
 ```git
 git clone https://github.com/MrKruger/CRYPTOGRAPHY-APPLIED-TO-THE-SECURITY-OF-INTERNET-OF-THINGS.git
 ```
 
-* **BAIXAR O PYTHON/DOWNLOAD THE PYTHON**: BAIXE E INSTALE A ÚLTIMA VERSÃO DA LINGUAGEM PYTHON PELO SITE OFICIAL(É NECESSÁRIO QUE A VERSÃO DO PYTHON SEJA ACIMA DA VERSÃO 3)/DOWNLOAD AND INSTALL THE LAST VERSION OF THE PYTHON LANGUAGE ON THE OFFICIAL SITE(IT IS NECESSARY THAT THE PYTHON VERSION IS ABOVE VERSION 3): https://www.python.org/downloads/.
+* **BAIXAR O PYTHON/DOWNLOAD THE PYTHON**: Baixe e instale a última versão da linguagem python pelo site oficial(é necessário que a versão do python seja acima da versão 3)/Download and install the last version of the python language on the official site(it is necessary that the python version is above version 3): https://www.python.org/downloads/.
 
-* **EXECUTAR O CÓDIGO/RUN THE CODE**: APÓS BAIXAR E INSTALAR O PYTHON, ABRA O TERMINAL OU O CMD E VÁ ATÉ A PASTA AONDE SE ENCONTRA O CÓDIGO FONTE E DIGITE/AFTER THAT DOWNLOADING AND INSTALLING THE PYTHON, OPEN THE TERMINAL OR THE CMD AND GO TO THE FILE WHERE THE SOURCE CODE IS FOUND AND TYPE:
+* **EXECUTAR O CÓDIGO/RUN THE CODE**: Após baixar e instalar o python, abra o terminal ou o cmd e vá até a pasta aonde se encontra o código fonte e digite/After that downloading and installing the python, open the terminal or the cmd and go to the file where the source code is found and type:
 
 ```py 
 python CripIOT.py
