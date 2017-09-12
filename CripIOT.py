@@ -36,19 +36,19 @@ C:::::C               r:::::r            i::::i p:::::p     p:::::p  I::::I  O::
    \n""")
 
     print("""
-+-------------------------+
-|   Selecione uma opção   |
-+-------------------------+
++---------------------------------------------+
+|   Selecione uma Opção/Selection an Option   |
++---------------------------------------------+
 
-+-------------------------+
-| [1] Encriptar           |
-+-------------------------+
-| [2] Decriptar           |
-+-------------------------+
-| [3] Ajuda               |
-+-------------------------+
-| [4] Créditos            |
-+-------------------------+
++---------------------------------+
+| [1] Encriptar/Encrypt           |
++---------------------------------+
+| [2] Decriptar/Decrypt           |
++---------------------------------+
+| [3] Ajuda/Help                  |
++---------------------------------+
+| [4] Créditos/Credits            |
++---------------------------------+
             """)
 
 Banner()
@@ -60,12 +60,9 @@ try:
 
     if option == 1:
         class Cifra_de_Cesar(object):
-            "Define a função __init__ que inicializa o estado inicial de um objeto."
 
             def __init__(self):
                 pass
-
-            "Define a função Encriptar que cifra um determinado texto."
 
             def Encriptar(self, Mensagem, Chave):
                 Mensagem_Cifrada = ""
@@ -90,8 +87,6 @@ try:
                     else:
                         Mensagem_Cifrada += Letra
                 return Mensagem_Cifrada
-
-            "Define a função Decriptar que decifra um determinado texto."
 
             def Decriptar(self, Mensagem, Chave):
                 Mensagem_Cifrada = ""
@@ -121,7 +116,7 @@ try:
         Rodadas = 0                                                                                                             
         Numero_de_Repetições = 25                                                                                              
 
-        Texto_Claro = input("[+] Digite um texto para ser Criptografado: ")                                                    
+        Texto_Claro = input("[+] Digite um texto para ser Criptografado/Type a text to be Encrypted: ")                                                    
 
         lista_chaves_1 =  [5,17,25,10,18,24,6,4,9,19,20,14,22,15,7,23,3,16,1,12,2,8,21,13,11]
         lista_chaves_2 =  [2,3,15,11,25,6,21,4,19,20,18,17,13,10,12,24,1,5,16,7,9,8,22,23,14]
@@ -177,7 +172,7 @@ try:
         lista_chaves_52 = [20,8,16,9,21,24,19,23,22,4,11,7,15,10,6,14,2,18,1,12,5,17,13,25,3]
 
         os.system("cls" or "clear")
-        print("[-] Encriptando...")
+        print("[-] Encriptando/Encrypting...")
 
         while True:
 
@@ -428,17 +423,14 @@ try:
             Rodadas = Rodadas + 1                                                                                               
             Texto_Claro = Resultado_Aplica_Mul_Chaves
             if Rodadas >= Numero_de_Repetições:
-                print("[=] O resultado do texto Criptografado é: ", Texto_Claro)
+                print("[=] O resultado do texto Criptografado é/The result of the Encrypted text is: ", Texto_Claro)
                 break
 
     elif option == 2:
         class Cifra_de_Cesar(object):
-            "Define a função __init__ que inicializa o estado inicial de um objeto."
 
             def __init__(self):
                 pass
-
-            "Define a função Encriptar que cifra um determinado texto."
 
             def Encriptar(self, Mensagem, Chave):
                 Mensagem_Cifrada = ""
@@ -463,8 +455,6 @@ try:
                     else:
                         Mensagem_Cifrada += Letra
                 return Mensagem_Cifrada
-
-            "Define a função Decriptar que decifra um determinado texto."
 
             def Decriptar(self, Mensagem, Chave):
                 Mensagem_Cifrada = ""
@@ -494,7 +484,7 @@ try:
         Rodadas = 0                                                                                                             
         Numero_de_Repetições = 25                                                                                               
 
-        Texto_Claro = input("[+] Digite um texto para ser Decriptografado: ")                                                   
+        Texto_Claro = input("[+] Digite um texto para ser Decriptografado/Type a text to be Decrypted: ")                                                   
 
         lista_chaves_1 =  [5,17,25,10,18,24,6,4,9,19,20,14,22,15,7,23,3,16,1,12,2,8,21,13,11]
         lista_chaves_2 =  [2,3,15,11,25,6,21,4,19,20,18,17,13,10,12,24,1,5,16,7,9,8,22,23,14]
@@ -550,7 +540,7 @@ try:
         lista_chaves_52 = [20,8,16,9,21,24,19,23,22,4,11,7,15,10,6,14,2,18,1,12,5,17,13,25,3]
 
         os.system("cls" or "clear")
-        print("[-] Decriptando...")
+        print("[-] Decriptando/Decrypting...")
 
         while True:
 
@@ -801,42 +791,44 @@ try:
             Rodadas = Rodadas + 1                                                                                             
             Texto_Claro = Resultado_Aplica_Mul_Chaves
             if Rodadas >= Numero_de_Repetições:
-                print("[=] O resultado do texto Decriptografado é: ", Texto_Claro.strip("0"))
+                print("[=] O resultado do texto Decriptografado é/The result of the Decrypted text is: ", Texto_Claro.strip("0"))
                 break
 
     elif option == 3:
         print("""
-+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
-|                                   HELP                                    |
-+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
+|                                                     HELP                                                     |
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
 
-|=> PARA ENCRIPTAR UM TEXTO, SELECIONE A OPÇÃO 1:
-    => EXEMPLO: >>> 1
-                [+] Digite um texto para ser Criptografado: xxxxxxxxxxx
-                [-] Encriptando...
-                [=] O resultado do texto Criptografado é: yyyyyyyyyyy
+|=> PARA ENCRIPTAR UM TEXTO, SELECIONE A OPÇÃO 1/TO ENCRYPT A TEXT, SELECT THE OPTION 1:
+    => EXEMPLO/EXAMPLE: >>> 1
+                [+] Digite um texto para ser Criptografado/Type a text to be Encrypted: xxxxxxxxxxx
+                [-] Encriptando/Encrypting...
+                [=] O resultado do texto Criptografado é/The result of the Encrypted text is: yyyyyyyyyyy
 
-    => OBSERVAÇÕES:
-        => O CÓDIGO ACEITA LETRAS SEM ACENTUAÇÃO E NÚMEROS.
-        => É POSSÍVEL ENCRIPTAR TEXTOS DE ATÉ 5625 CARACTERES POR VEZ.
+    => OBSERVAÇÕES/REMARKS:
+        => O CÓDIGO ACEITA LETRAS SEM ACENTUAÇÃO E NÚMEROS/THE CODE ACCEPT UNLIMETED LETTERS AND NUMBERS.
+        => É POSSÍVEL ENCRIPTAR TEXTOS DE ATÉ 5625 CARACTERES POR VEZ/IT IS POSSIBLE TO ENCRYPT TEXTS OF UP
+           TO 5625 CHARACTERS ONCE.
 
-|=> PARA DECRIPTAR UM TEXTO, SELECIONE A OPÇÃO 2:
-    => EXEMPLO: >>> 2
-                [+] Digite um texto para ser Decriptografado: yyyyyyyyyyy
-                [-] Decriptando...
-                [=] O resultado do texto Decriptografado é: xxxxxxxxxxx
+|=> PARA DECRIPTAR UM TEXTO, SELECIONE A OPÇÃO 2/TO DECRYPT A TEXT, SELECT THE OPTION 2:
+    => EXEMPLO/EXAMPLE: >>> 2
+                [+] Digite um texto para ser Decriptografado/Type a text to be Decrypted: yyyyyyyyyyy
+                [-] Decriptando/Decrypting...
+                [=] O resultado do texto Decriptografado é/The result of the Decrypted text is: xxxxxxxxxxx
 
-    => OBSERVAÇÕES:
+    => OBSERVAÇÕES/REMARKS:
         => O TEXTO INSERIDO PARA DECRIPTAÇÃO DEVE OBRIGATÓRIAMENTE TER
-           SIDO ENCRIPTADO ANTES COM O MESMO ALGORÍTMO.
+           SIDO ENCRIPTADO ANTES COM O MESMO ALGORÍTMO/THE TEXT INSERTED FOR DECRIPTION MUST BEEN ENCRYPTED
+           BEFORE THE SAME ALGORITHM.
 
-|=> PARA PEDIR AJUDA SELECIONE A OPÇÃO 3.
+|=> PARA PEDIR AJUDA SELECIONE A OPÇÃO 3/TO ASK FOR HELP SELECT THE OPTION 3.
 
-|=> PARA VER OS CRÉDITOS SELECIONE A OPÇÃO 4.
+|=> PARA VER OS CRÉDITOS SELECIONE A OPÇÃO 4/TO SEE THE CREDITS SELECT THE OPTION 4.
 
-+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
-|                                   HELP                                    |
-+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
+|                                                     HELP                                                     |
++~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
      """)
 
     elif option == 4:
@@ -860,6 +852,6 @@ SSS     S*S  S*S    SSS   SS   S*S     SS  S*S    SSS    YSSP~YSSY      Y~YSSY  
 """)
 
 except KeyboardInterrupt:
-    print('\n[!] Saindo...')
+    print('\n[!] Saindo/Getting out...')
 except ValueError:
-    print('\n[!] Insira um valor correto.')
+    print('\n[!] Insira um valor correto/Insert a correct value.')
