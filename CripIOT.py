@@ -115,10 +115,10 @@ try:
                 return Mensagem_Cifrada
 
 
-        Rodadas = 0
-        Numero_de_Repetições = 25
+        countLoop = 0                       # index of a loop
+        numOfLoops = 25                     # to use in while
 
-        #text to be user encrypted
+        # text to be encrypted - text is a list of letters
         text = input("[+] Digite um texto para ser Criptografado/Type a text to be Encrypted: ")
 
         lista_chaves_1 = [5, 17, 25, 10, 18, 24, 6, 4, 9, 19, 20, 14, 22, 15, 7, 23, 3, 16, 1, 12, 2, 8, 21, 13, 11]
@@ -179,15 +179,15 @@ try:
 
         while True:
 
-            def Lista_Inicial_Letras(Texto_Claro_Inicial):
-                Lista = []
-                Repete = len(Texto_Claro_Inicial)
-                for Letras in range(Repete):
-                    Lista.append(Texto_Claro_Inicial[Letras])
-                return Lista
+            def getLetterList(text):
+                letterList = []
+                Repete = len(text)
+                for letter in range(Repete):
+                    letterList.append(text[letter])
+                return letterList
 
 
-            Resultado_Lista_Inicial_Letras = Lista_Inicial_Letras(text)
+            Resultado_Lista_Inicial_Letras = getLetterList(text)
 
 
             def Define_Tamanho_Matriz(M):
@@ -429,9 +429,9 @@ try:
 
             Resultado_Aplica_Mul_Chaves = Aplica_Mul_Chaves(Lista_Matriz_Transposta)
 
-            Rodadas = Rodadas + 1
+            countLoop = countLoop + 1
             text = Resultado_Aplica_Mul_Chaves
-            if Rodadas >= Numero_de_Repetições:
+            if countLoop >= numOfLoops:
                 print("[=] O resultado do texto Criptografado é/The result of the Encrypted text is: ", text)
                 break
 
@@ -467,7 +467,7 @@ try:
 
             def Decriptar(self, Mensagem, Chave):
                 Mensagem_Cifrada = ""
-                Chave = -Chave
+                Chave = -Chave                      # turn negative key
                 for Letra in Mensagem:
                     if Letra.isalpha():
                         Index = ord(Letra)
@@ -491,8 +491,8 @@ try:
                 return Mensagem_Cifrada
 
 
-        Rodadas = 0
-        Numero_de_Repetições = 25
+        countLoop = 0
+        numOfLoops = 25
 
         text = input("[+] Digite um texto para ser Decriptografado/Type a text to be Decrypted: ")
 
@@ -562,7 +562,7 @@ try:
                 return Lista
 
 
-            Resultado_Lista_Inicial_Letras = Lista_Inicial_Letras(text)
+            Resultado_Lista_Inicial_Letras = getLetterList(text)
 
 
             def Define_Tamanho_Matriz(M):
@@ -804,9 +804,9 @@ try:
 
             Resultado_Aplica_Mul_Chaves = Aplica_Mul_Chaves(Lista_Matriz_Transposta)
 
-            Rodadas = Rodadas + 1
+            countLoop = countLoop + 1
             text = Resultado_Aplica_Mul_Chaves
-            if Rodadas >= Numero_de_Repetições:
+            if countLoop >= numOfLoops:
                 print("[=] O resultado do texto Decriptografado é/The result of the Decrypted text is: ",
                       text.strip("0"))
                 break
