@@ -1,7 +1,15 @@
+# this class make encrypt and decrypt
+# receiving only one parameter in text and returning the processed text
+
+import numpy as np
+import math
+
 class CifraCesar(object):
     def __init__(self):
         # represents a const alpha lenght to make index calculus
-        self.alphaLenght = 26
+        self.__alphabetSize = 26
+        # to use decrypt algorithm - start with false value. when true the alg is used
+        self.__isDecrypt = False
         # key list for crypt and decrypt calculus
         self.__keys = [
             [5, 17, 25, 10, 18, 24, 6, 4, 9, 19, 20, 14, 22, 15, 7, 23, 3, 16, 1, 12, 2, 8, 21, 13, 11],
@@ -57,35 +65,99 @@ class CifraCesar(object):
             [25, 7, 9, 16, 11, 8, 12, 4, 17, 24, 14, 2, 20, 10, 19, 6, 1, 3, 21, 13, 15, 23, 22, 5, 18],
             [20, 8, 16, 9, 21, 24, 19, 23, 22, 4, 11, 7, 15, 10, 6, 14, 2, 18, 1, 12, 5, 17, 13, 25, 3]
         ]
+        # represent a key that are used in calc
+        self.__key = 0
+
+    #############################################
+    #   H   E   L   P    E    R   S
+    #############################################
+
+    # convert text to char list
+    def __convertTextToList(self, text):
+        letterList = []
+        for letter in range(len(text)):
+            letterList.append(text[letter])
+        return letterList
+
+    # get a perfect matrix
+    def __getPerfectMatrix(self, message):
+        msg_size = len(message)
+        sqrt_msg_size = int(math.sqrt(msg_size))
+        num_rounded = int(math.ceil(math.sqrt(msg_size)))
+
+        zeros_matrix = np.zeros((num_rounded * num_rounded) - msg_size, dtype=np.int)
+        zeros_matrix_list = zeros_matrix.tolist()
+
+        perfect_matrix = np.array(message + zeros_matrix_list).reshape((
+            num_rounded,
+            num_rounded
+        ))
+
+        square_numbers = [x * x for x in range(76)]                # get some square numbers
+        if msg_size in square_numbers:
+            matrix = np.array(message).reshape((sqrt_msg_size, sqrt_msg_size))
+        else:
+            matrix = perfect_matrix
+
+        return matrix
+
+    # process the text and return a new list with index changes
+    def __sortMatrix(self, calc, matrix):
+        self.__key = - self.__keys[0][0] if self.__isDecrypt else self.__keys[0][0]  # first key, positive or not?
+        sorted_matrix = calc(matrix, self.__key)
+
+        for i in range(1, 25):
+            for j in range(52):
+                if self.__isDecrypt:
+                    self.__key = - self.__keys[j][i]                        # reverse algorithm with negative key
+                else:
+                    self.__key = self.__keys[j][i]                          # normal algorithm with positive key
+
+                sorted_matrix = calc(sorted_matrix, self.__key)  # sort matrix with the key in the Keys list
+
+        return sorted_matrix
+
+    # transpose matrix data
+    def __handleText(self, calc, text):
+        for _ in range(25):
+            _list = self.__convertTextToList(text)                              # convert text as char list
+            perfect_matrix = self.__getPerfectMatrix(_list)                     # convert list to perfect matrix (x*x)
+            transposed_matrix = perfect_matrix.transpose().flatten().tolist()   # transpose and convert to list again kk
+            sorted_matrix = self.__sortMatrix(calc, transposed_matrix)
+        return sorted_matrix
 
     # Encrypts only alpha texts
-    def encrypt(self, text, key):
-        return self.__calc(text, key)                  # pass a positive key
+    def encrypt(self, text):
+        self.__isDecrypt = False                                                # normal alg. not use negative keys
+        encrypted_text = self.__handleText(self.__calc, text)
+        return encrypted_text                  # pass a positive key
 
     # Decrypts only alpha texts
-    def decrypt(self, text, key):
-        return self.__calc(text, -key)                 # pass a negative key
+    def decrypt(self, text):
+        self.__isDecrypt = True                                                 # set decrypt keys negative.
+        decrypted_text = self.__handleText(self.__calc, text)
+        return decrypted_text
 
     # base for the two ways - encrypt and decrypt are similar
     def __calc(self, text, key):
         new_text = ""
         for letter in text:
             if letter.isalpha():
-                index = ord(letter)                             # get the order of a letter in alphabet
+                index = ord(letter)                                              # get the order of a letter in alphabet
                 index += key
 
                 if letter.isupper():
                     if index > ord("Z"):
-                        index -= self.alphaLenght
+                        index -= self.__alphabetSize
                     elif index < ord("A"):
-                        index += self.alphaLenght
+                        index += self.__alphabetSize
                 else:
                     if index > ord("z"):
-                        index -= self.alphaLenght
+                        index -= self.__alphabetSize
                     elif index < ord("a"):
-                        index += self.alphaLenght
+                        index += self.__alphabetSize
 
-                new_text += chr(index)                          # get char from alphabet with a index
+                new_text += chr(index)                                           # get char from alphabet with a index
             else:
-                new_text += letter                              # get normal char
+                new_text += letter                                               # get normal char
         return new_text
