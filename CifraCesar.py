@@ -1,6 +1,4 @@
 class CifraCesar(object):
-
-
     def __init__(self):
         # represents a const alpha lenght to make index calculus
         self.alphaLenght = 26
@@ -62,26 +60,32 @@ class CifraCesar(object):
 
     # Encrypts only alpha texts
     def encrypt(self, text, key):
-        self.__encrypt_decrypt_base(text, key)                  # pass a positive key
+        return self.__calc(text, key)                  # pass a positive key
 
     # Decrypts only alpha texts
     def decrypt(self, text, key):
-        self.__encrypt_decrypt_base(text, -key)                 # pass a negative key
+        return self.__calc(text, -key)                 # pass a negative key
 
     # base for the two ways - encrypt and decrypt are similar
-    def __encrypt_decrypt_base(self, text, key):
+    def __calc(self, text, key):
         new_text = ""
         for letter in text:
             if letter.isalpha():
                 index = ord(letter)                             # get the order of a letter in alphabet
                 index += key
 
-                if index > ord("z") or index > ord("Z"):
-                    index -= self.alphaLenght
-                elif index < ord("a") or index < ord("A"):
-                    index += self.alphaLenght
+                if letter.isupper():
+                    if index > ord("Z"):
+                        index -= self.alphaLenght
+                    elif index < ord("A"):
+                        index += self.alphaLenght
+                else:
+                    if index > ord("z"):
+                        index -= self.alphaLenght
+                    elif index < ord("a"):
+                        index += self.alphaLenght
 
-                new_text += chr(index)                    # get char from alphabet with a index
+                new_text += chr(index)                          # get char from alphabet with a index
             else:
-                new_text += letter                        # get normal char
+                new_text += letter                              # get normal char
         return new_text
